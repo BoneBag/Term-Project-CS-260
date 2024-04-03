@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include "Customer.h"
 #include "Account.h"
 using namespace std;
@@ -12,6 +13,8 @@ int main()
 	string space(12, ' ');
 	cout << header << endl << space << "Welcome to Banking United!" << endl << header << endl;
 #pragma endregion
+	const char separator = ' ';
+	const int numWidth = 20;
 	int opt = 0;
 	do {
 		cout << header << endl << "Enter a number according to the options below: " << endl;
@@ -29,7 +32,15 @@ int main()
 
 		switch (opt) {
 		case 0:
-
+			cout << header << header << endl << 
+				left << setw(numWidth) << setfill(separator) << "Account #" << 
+				left << setw(numWidth) << setfill(separator) << "First Name" << 
+				left << setw(numWidth) << setfill(separator) << "Last name" << 
+				left << setw(numWidth) << setfill(separator) << "Balance" << 
+				left << setw(numWidth) << setfill(separator) << "Current Rewards Points" << endl
+				<< header << header << endl;
+			//Account information goes here
+			cout << header << header << endl;
 			break;
 		case 1:
 
