@@ -4,6 +4,13 @@ void Customer::printInfo() {
 	cout << "Name: " << fName << " " << lName << ", Address: " << address << ", Email: " << email << endl;
 }
 
+void Customer::setAll(string _fname, string _lname, string _address, string _email, int _phone) {
+	fName = _fname;
+	lName = _lname;
+	address = _address;
+	email = _email;
+	phone = _phone;
+}
 void Customer::setFName(string _fname) {
 	fName = _fname;
 }
@@ -36,13 +43,7 @@ int Customer::getPhone() {
 	return phone;
 }
 
-Customer::Customer() :Customer("", "", "", "", 0) {
-
-}
+Customer::Customer() :Customer("", "", "", "", 0) {}
 Customer::Customer(string _fname, string _lname, string _address, string _email, int _phone) {
-	fName = _fname;
-	lName = _lname;
-	address = _address;
-	email = _email;
-	phone = _phone;
+	setAll(_fname, _lname, _address, _email, _phone);
 }
