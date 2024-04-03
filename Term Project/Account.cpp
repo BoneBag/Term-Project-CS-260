@@ -1,12 +1,28 @@
 #include "Account.h"
 
-Account::Account() :Account(0, 0, 0, 0, 0) {
-
-}
+Account::Account() :Account(0, 0, 0, 0, 0) {}
 Account::Account(int _ID, int _wds, int _depos, double _balance, int _points) {
-	ID = _ID;
-	wds = _wds;
-	depos = _depos;
+	if (_ID >= 0)
+		ID = _ID;
+	else {
+		cout << "Invalid ID number entered!" << endl;
+		ID = 0;
+	}
+
+	if (_wds >= 0)
+		wds = _wds;
+	else {
+		cout << "Invalid number of withdrawals entered!" << endl;
+		wds = 0;
+	}
+
+	if (_depos >= 0)
+		depos = _depos;
+	else {
+		cout << "Invalid number of deposits entered!" << endl;
+		depos = 0;
+	}
+
 	balance = _balance;
 	rewardPoints = _points;
 }
