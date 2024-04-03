@@ -11,6 +11,7 @@ class Customer
 public:
 	void printInfo();
 
+	void setAll(string _fname, string _lname, string _address, string _email, int _phone);
 	void setFName(string _fname);
 	void setLName(string _lname);
 	void setAddress(string _address);

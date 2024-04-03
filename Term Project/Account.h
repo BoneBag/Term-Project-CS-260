@@ -13,7 +13,7 @@ class Account
 	int rewardPoints;
 public:
 	Account();
-	Account(int _ID, int _wds, int _depos, double _balance, int _points);
+	Account(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, int _phone);
 
 	void Deposit(double amount);
 	void Withdraw(double amount);

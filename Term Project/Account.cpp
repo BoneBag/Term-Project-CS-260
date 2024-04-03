@@ -1,7 +1,7 @@
 #include "Account.h"
 
-Account::Account() :Account(0, 0, 0, 0, 0) {}
-Account::Account(int _ID, int _wds, int _depos, double _balance, int _points) {
+Account::Account() :Account(0, 0, 0, 0, 0, "", "", "", "", 0) {}
+Account::Account(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, int _phone) {
 	if (_ID >= 0)
 		ID = _ID;
 	else {
@@ -25,6 +25,8 @@ Account::Account(int _ID, int _wds, int _depos, double _balance, int _points) {
 
 	balance = _balance;
 	rewardPoints = _points;
+
+	accountCustomer.setAll(_fname, _lname, _address, _email, _phone);
 }
 
 void Account::Deposit(double amount) {
