@@ -17,13 +17,46 @@ int main()
 		cout << header << endl << "Enter a number according to the options below: " << endl;
 		cout << "0: View Checking Account Information" << endl <<
 			"1: View Saving Account Information" << endl <<
-			"2: Create New Checking Account" << endl <<
-			"3: Create New Saving Account" << endl <<
-			"4: Modify Existing Checking Account" << endl <<
-			"5: Modify Existing Saving Account" << endl <<
-			"6: Delete Existing Checking Account" << endl <<
-			"7: Delete Existing Saving Account" << endl <<
-			"8: Exit" << endl << header << endl;
+			"2: View Reward Points Information" << endl <<
+			"3: Create New Checking Account" << endl <<
+			"4: Create New Saving Account" << endl <<
+			"5: Modify Existing Checking Account" << endl <<
+			"6: Modify Existing Saving Account" << endl <<
+			"7: Delete Existing Checking Account" << endl <<
+			"8: Delete Existing Saving Account" << endl <<
+			"9: Exit" << endl << header << endl;
 		cin >> opt;
-	} while (opt != 8);
+
+		switch (opt) {
+		case 0:
+
+			break;
+		case 1:
+
+			break;
+		case 2:
+
+			break;
+		case 3:
+
+			break;
+		case 4:
+
+			break;
+		case 5:
+
+			break;
+		case 6:
+
+			break;
+		case 7:
+
+			break;
+		case 8:
+
+			break;
+		default:
+				break;
+		}
+	} while (opt != 9);
 }

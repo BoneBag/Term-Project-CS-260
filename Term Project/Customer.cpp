@@ -36,9 +36,7 @@ int Customer::getPhone() {
 	return phone;
 }
 
-Customer::Customer() :Customer("", "", "", "", 0) {
-
-}
+Customer::Customer() :Customer("", "", "", "", 0) {}
 Customer::Customer(string _fname, string _lname, string _address, string _email, int _phone) {
 	fName = _fname;
 	lName = _lname;

@@ -10,9 +10,10 @@ class Account
 	int ID, wds, depos; //Account ID, withdrawals, and deposits
 	double balance;
 	Customer accountCustomer;
+	int rewardPoints;
 public:
 	Account();
-	Account(int _ID, int _wds, int _depos, double _balance);
+	Account(int _ID, int _wds, int _depos, double _balance, int _points);
 
 	void Deposit(double amount);
 	void Withdraw(double amount);
