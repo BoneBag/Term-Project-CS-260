@@ -24,7 +24,12 @@ void Customer::setEmail(string _email) {
 	email = _email;
 }
 void Customer::setPhone(int _phone) {
-	phone = _phone;
+	if (_phone >= 0)
+		phone = _phone;
+	else {
+		cout << "Invalid phone number entered!" << endl;
+		phone = _phone;
+	}
 }
 
 string Customer::getFName() {

@@ -17,6 +17,8 @@ public:
 
 	void Deposit(double amount);
 	void Withdraw(double amount);
+	void AddPoints(int amount);
+	void UsePoints(int amount);
 	void PrintInfo();
 };
 
