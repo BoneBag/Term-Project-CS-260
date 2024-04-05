@@ -1,7 +1,11 @@
 #include "Customer.h"
+#include <iomanip>
 
 void Customer::printInfo() {
-	cout << "Name: " << fName << " " << lName << ", Address: " << address << ", Email: " << email << endl;
+	const char separator = ' ';
+	const int numWidth = 20;
+	cout << left << setw(numWidth) << setfill(separator) << fName <<
+		left << setw(numWidth) << setfill(separator) << lName;
 }
 
 void Customer::setAll(string _fname, string _lname, string _address, string _email, int _phone) {

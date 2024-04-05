@@ -1,4 +1,5 @@
 #include "Account.h"
+#include <iomanip>
 
 Account::Account() :Account(0, 0, 0, 0, 0, "", "", "", "", 0) {}
 Account::Account(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, int _phone) {
@@ -82,6 +83,10 @@ void Account::UsePoints(int amount) {
 }
 
 void Account::PrintInfo() {
+	const char separator = ' ';
+	const int numWidth = 20;
+	cout << left << setw(numWidth) << setfill(separator) << ID;
 	accountCustomer.printInfo();
-	cout << "ID: " << ID << ", Withdrawals: " << wds << ", Deposits: " << depos << " Current Balance: " << balance << endl;
+	cout << left << setw(numWidth) << setfill(separator) << balance <<
+		left << setw(numWidth) << setfill(separator) << rewardPoints << endl;
 }

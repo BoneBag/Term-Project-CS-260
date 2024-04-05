@@ -13,6 +13,7 @@ int main()
 	string space(12, ' ');
 	cout << header << endl << space << "Welcome to Banking United!" << endl << header << endl;
 #pragma endregion
+
 	const char separator = ' ';
 	const int numWidth = 20;
 	int opt = 0;
