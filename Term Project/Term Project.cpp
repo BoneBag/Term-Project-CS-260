@@ -52,6 +52,7 @@ int main()
 			system("CLS");
 			break;
 		case 1:
+			system("CLS");
 			// Functionality goes here
 
 			do {
@@ -61,6 +62,7 @@ int main()
 			system("CLS");
 			break;
 		case 2:
+			system("CLS");
 			// Functionality goes here
 
 			do {
@@ -70,6 +72,7 @@ int main()
 			system("CLS");
 			break;
 		case 3:
+			system("CLS");
 			// Functionality goes here
 
 			do {
@@ -79,6 +82,7 @@ int main()
 			system("CLS");
 			break;
 		case 4:
+			system("CLS");
 			// Functionality goes here
 
 			do {
@@ -88,6 +92,7 @@ int main()
 			system("CLS");
 			break;
 		case 5:
+			system("CLS");
 			// Functionality goes here
 
 			do {
@@ -97,6 +102,7 @@ int main()
 			system("CLS");
 			break;
 		case 6:
+			system("CLS");
 			// Functionality goes here
 
 			do {
@@ -106,6 +112,7 @@ int main()
 			system("CLS");
 			break;
 		case 7:
+			system("CLS");
 			// Functionality goes here
 
 			do {
@@ -115,6 +122,7 @@ int main()
 			system("CLS");
 			break;
 		case 8:
+			system("CLS");
 			// Functionality goes here
 
 			do {
@@ -124,7 +132,10 @@ int main()
 			system("CLS");
 			break;
 		default:
-			cout << "Goodbye!" << endl;
+			system("CLS");
+			cout << header << endl
+				<< "        " << "Thank you for using Banking United!" << endl
+				<< header;
 				break;
 		}
 	} while (opt < 9);
