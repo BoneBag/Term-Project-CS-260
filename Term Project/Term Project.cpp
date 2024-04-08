@@ -45,33 +45,101 @@ int main()
 			//Account information goes here
 			cout << header << header << endl;
 
-			cout << "Enter a number when you're ready to continue ";
+			cout << endl << "Enter 1 when you're ready to continue ";
 			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
 			system("CLS");
 			break;
 		case 1:
+			// Functionality goes here
 
+			cout << endl << "Enter 1 when you're ready to continue ";
+			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
+			system("CLS");
 			break;
 		case 2:
+			// Functionality goes here
 
+			cout << endl << "Enter 1 when you're ready to continue ";
+			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
+			system("CLS");
 			break;
 		case 3:
+			// Functionality goes here
 
+			cout << endl << "Enter 1 when you're ready to continue ";
+			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
+			system("CLS");
 			break;
 		case 4:
+			// Functionality goes here
 
+			cout << endl << "Enter 1 when you're ready to continue ";
+			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
+			system("CLS");
 			break;
 		case 5:
+			// Functionality goes here
 
+			cout << endl << "Enter 1 when you're ready to continue ";
+			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
+			system("CLS");
 			break;
 		case 6:
+			// Functionality goes here
 
+			cout << endl << "Enter 1 when you're ready to continue ";
+			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
+			system("CLS");
 			break;
 		case 7:
+			// Functionality goes here
 
+			cout << endl << "Enter 1 when you're ready to continue ";
+			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
+			system("CLS");
 			break;
 		case 8:
+			// Functionality goes here
 
+			cout << endl << "Enter 1 when you're ready to continue ";
+			cin >> cont;
+			if (cont != 1) {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			}
+			system("CLS");
 			break;
 		default:
 			cout << "Goodbye!" << endl;
