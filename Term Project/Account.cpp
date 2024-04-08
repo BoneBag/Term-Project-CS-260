@@ -45,8 +45,11 @@ Account::Account(int _ID, int _wds, int _depos, double _balance, int _points, st
 
 void Account::Deposit(double amount) {
 	if (amount >= 0) {
-	balance += amount;
-	depos++;
+		balance += amount;
+		depos++;
+		if (amount >= 150) {
+			AddPoints(amount * .1);
+		}
 	}
 	else {
 		cout << "Invalid amount entered." << endl;

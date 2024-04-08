@@ -21,7 +21,7 @@ int main()
 		cout << header << endl << "Enter a number according to the options below: " << endl;
 		cout << "0: View Checking Account Information" << endl <<
 			"1: View Saving Account Information" << endl <<
-			"2: View Reward Points Information" << endl <<
+			"2: Spend Reward Points" << endl <<
 			"3: Create New Checking Account" << endl <<
 			"4: Create New Saving Account" << endl <<
 			"5: Modify Existing Checking Account" << endl <<
@@ -38,7 +38,7 @@ int main()
 				left << setw(numWidth) << setfill(separator) << "First Name" << 
 				left << setw(numWidth) << setfill(separator) << "Last name" << 
 				left << setw(numWidth) << setfill(separator) << "Balance" << 
-				left << setw(numWidth) << setfill(separator) << "Current Rewards Points" << endl
+				left << setw(numWidth) << setfill(separator) << "Current Reward Points" << endl
 				<< header << header << endl;
 			//Account information goes here
 			cout << header << header << endl;
