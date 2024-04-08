@@ -12,11 +12,12 @@ int main()
 	string header(LINELENGTH, '~');
 	string space(12, ' ');
 	cout << header << endl << space << "Welcome to Banking United!" << endl << header << endl;
-#pragma endregion
-
 	const char separator = ' ';
 	const int numWidth = 20;
 	int opt = 0;
+	int cont = 0;
+#pragma endregion
+
 	do {
 		cout << header << endl << "Enter a number according to the options below: " << endl;
 		cout << "0: View Checking Account Information" << endl <<
@@ -33,6 +34,7 @@ int main()
 
 		switch (opt) {
 		case 0:
+			system("CLS");
 			cout << header << header << endl << 
 				left << setw(numWidth) << setfill(separator) << "Account #" << 
 				left << setw(numWidth) << setfill(separator) << "First Name" << 
@@ -42,6 +44,10 @@ int main()
 				<< header << header << endl;
 			//Account information goes here
 			cout << header << header << endl;
+
+			cout << "Enter a number when you're ready to continue ";
+			cin >> cont;
+			system("CLS");
 			break;
 		case 1:
 
@@ -68,7 +74,8 @@ int main()
 
 			break;
 		default:
+			cout << "Goodbye!" << endl;
 				break;
 		}
-	} while (opt != 9);
+	} while (opt < 9);
 }
