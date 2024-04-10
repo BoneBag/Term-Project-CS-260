@@ -15,20 +15,13 @@ class SavingAccount : public Account
 public: 
 
 	SavingAccount();
-	SavingAccount(int _ID, string _fname, string _lname, string _address, string _email, int _phone, double _balance, int _wds, int _depos, double _interestR);
+	SavingAccount(int _ID, string _fname, string _lname, string _address, string _email, int _phone, double _balance, int _points, int _wds, int _depos, double _interestR);
 
 
 	void payInterest(double balance, double amount);
 
 
 };
-
-
-
-
-
-
-
 
 
 
