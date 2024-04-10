@@ -9,7 +9,7 @@ CheckingAccount:: CheckingAccount() : Account()
 }
 
 
-CheckingAccount:: CheckingAccount(int _ID, string _fname, string _lname, string _address, string _email, int _phone, double _balance, int _wds, int _depos, double _overDL) : Account(_ID, _wds, _depos, _balance)
+CheckingAccount:: CheckingAccount(int _ID, string _fname, string _lname, string _address, string _email, int _phone, double _balance, int _wds, int _depos, int _pts, double _overDL) : Account(_ID, _wds, _depos, _balance, _pts, _fname, _lname, _address, _email, _phone)
 {
 	overDraftLimit = _overDL;
 
@@ -22,7 +22,7 @@ void::CheckingAccount:: Withdraw(double amount, double balance)
 	if (amount <= balance)
 	{
 		balance -= amount;
-		Account::Withdraw;
+		Account::Withdraw(amount);
 		amount++;
 	}
 
@@ -32,7 +32,7 @@ void::CheckingAccount:: Withdraw(double amount, double balance)
 		if (balance - amount <= overDraftLimit)
 		{
 			balance -= amount + 20;
-			Account::Withdraw;
+			Account::Withdraw(amount);
 			amount++;
 		}
 

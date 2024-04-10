@@ -85,6 +85,10 @@ void Account::UsePoints(int amount) {
 	}
 }
 
+int Account::getID() {
+	return ID;
+}
+
 void Account::PrintInfo() {
 	const char separator = ' ';
 	const int numWidth = 20;

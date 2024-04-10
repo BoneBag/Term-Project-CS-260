@@ -3,6 +3,8 @@
 #include <iomanip>
 #include "Customer.h"
 #include "Account.h"
+#include "CheckingAccount.h"
+#include "SavingAccount.h"
 using namespace std;
 
 int main()
@@ -17,6 +19,19 @@ int main()
 	int opt = 0;
 	int cont = 0;
 #pragma endregion
+
+	CheckingAccount checking[20] = { CheckingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe@gmail.com", 9045529552, 350, 0, 0, 150, 200)};
+	SavingAccount saving[20] = { SavingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe@gmail.com", 9045529552, 100, 0, 0, 150, .05) };
+	int currentCheckings = 0;
+	int currentSavings = 0;
+	for (int i = 0; i < 20; i++) {
+		if (checking[i].getID() != 0)
+			currentCheckings++;
+	}
+	for (int i = 0; i < 20; i++) {
+		if (saving[i].getID() != 0)
+			currentSavings++;
+	}
 
 	do {
 		cout << header << endl << "Enter a number according to the options below: " << endl;
@@ -35,6 +50,8 @@ int main()
 		switch (opt) {
 		case 0:
 			system("CLS");
+			cout << header << header << endl <<
+				space << space << "       Now Viewing Checking Account Information" << endl;
 			cout << header << header << endl << 
 				left << setw(numWidth) << setfill(separator) << "Account #" << 
 				left << setw(numWidth) << setfill(separator) << "First Name" << 
@@ -43,6 +60,9 @@ int main()
 				left << setw(numWidth) << setfill(separator) << "Current Reward Points" << endl
 				<< header << header << endl;
 			//Account information goes here
+			for (int i = 0; i < currentCheckings; i++) {
+				checking[i].PrintInfo();
+			}
 			cout << header << header << endl;
 
 			do {
@@ -53,7 +73,20 @@ int main()
 			break;
 		case 1:
 			system("CLS");
-			// Functionality goes here
+			cout << header << header << endl <<
+				space << space << "       Now Viewing Saving Account Information" << endl;
+			cout << header << header << endl <<
+				left << setw(numWidth) << setfill(separator) << "Account #" <<
+				left << setw(numWidth) << setfill(separator) << "First Name" <<
+				left << setw(numWidth) << setfill(separator) << "Last name" <<
+				left << setw(numWidth) << setfill(separator) << "Balance" <<
+				left << setw(numWidth) << setfill(separator) << "Current Reward Points" << endl
+				<< header << header << endl;
+			//Account information goes here
+			for (int i = 0; i < currentSavings; i++) {
+					saving[i].PrintInfo();
+			}
+			cout << header << header << endl;
 
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";

@@ -19,6 +19,7 @@ public:
 	void Withdraw(double amount);
 	void AddPoints(int amount);
 	void UsePoints(int amount);
+	int getID();
 	void PrintInfo();
 };
 
