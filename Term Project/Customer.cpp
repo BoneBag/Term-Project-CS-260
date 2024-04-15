@@ -28,12 +28,7 @@ void Customer::setEmail(string _email) {
 	email = _email;
 }
 void Customer::setPhone(string _phone) {
-	if (_phone != "")
-		phone = _phone;
-	else {
-		cout << "Invalid phone number entered!" << endl;
-		phone = _phone;
-	}
+	phone = _phone;
 }
 
 string Customer::getFName() {
@@ -52,7 +47,7 @@ string Customer::getPhone() {
 	return phone;
 }
 
-Customer::Customer() :Customer("", "", "", "", 0) {}
+Customer::Customer() :Customer("", "", "", "", "") {}
 Customer::Customer(string _fname, string _lname, string _address, string _email, string _phone) {
 	setAll(_fname, _lname, _address, _email, _phone);
 }

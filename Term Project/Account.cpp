@@ -1,7 +1,7 @@
 #include "Account.h"
 #include <iomanip>
 
-Account::Account() :Account(0, 0, 0, 0, 0, "", "", "", "", 0) {}
+Account::Account() :Account(0, 0, 0, 0, 0, "", "", "", "", "") {}
 Account::Account(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, string _phone) {
 	if (_ID >= 0)
 		ID = _ID;
@@ -34,13 +34,7 @@ Account::Account(int _ID, int _wds, int _depos, double _balance, int _points, st
 	}
 	
 	
-	if (_phone != "") {
-		accountCustomer.setAll(_fname, _lname, _address, _email, _phone);
-	}
-	else {
-		cout << "Invalid phone number entered!" << endl;
-		accountCustomer.setAll(_fname, _lname, _address, _email, 0);
-	}
+	accountCustomer.setAll(_fname, _lname, _address, _email, _phone);
 }
 
 void Account::Deposit(double amount) {
@@ -120,14 +114,7 @@ void Account::setAll(int _ID, int _wds, int _depos, double _balance, int _points
 		rewardPoints = 0;
 	}
 
-
-	if (_phone != "") {
-		accountCustomer.setAll(_fname, _lname, _address, _email, _phone);
-	}
-	else {
-		cout << "Invalid phone number entered!" << endl;
-		accountCustomer.setAll(_fname, _lname, _address, _email, 0);
-	}
+	accountCustomer.setAll(_fname, _lname, _address, _email, _phone);
 }
 
 void Account::PrintInfo() {
