@@ -8,7 +8,7 @@ void Customer::printInfo() {
 		left << setw(numWidth) << setfill(separator) << lName;
 }
 
-void Customer::setAll(string _fname, string _lname, string _address, string _email, int _phone) {
+void Customer::setAll(string _fname, string _lname, string _address, string _email, string _phone) {
 	fName = _fname;
 	lName = _lname;
 	address = _address;
@@ -27,8 +27,8 @@ void Customer::setAddress(string _address) {
 void Customer::setEmail(string _email) {
 	email = _email;
 }
-void Customer::setPhone(int _phone) {
-	if (_phone >= 0)
+void Customer::setPhone(string _phone) {
+	if (_phone != "")
 		phone = _phone;
 	else {
 		cout << "Invalid phone number entered!" << endl;
@@ -48,11 +48,11 @@ string Customer::getAddress() {
 string Customer::getEmail() {
 	return email;
 }
-int Customer::getPhone() {
+string Customer::getPhone() {
 	return phone;
 }
 
 Customer::Customer() :Customer("", "", "", "", 0) {}
-Customer::Customer(string _fname, string _lname, string _address, string _email, int _phone) {
+Customer::Customer(string _fname, string _lname, string _address, string _email, string _phone) {
 	setAll(_fname, _lname, _address, _email, _phone);
 }

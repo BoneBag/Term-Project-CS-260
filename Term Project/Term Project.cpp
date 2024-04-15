@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <iomanip>
 #include "Customer.h"
 #include "Account.h"
@@ -20,10 +20,10 @@ int main()
 	int cont = 0;
 #pragma endregion
 
-	CheckingAccount checking[20] = { CheckingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe7@gmail.com", 9045529552, 350, 0, 0, 150, 200),
-	CheckingAccount(2026, "Jane", "Doe", "2440 Average Lane", "jDoe12@gmail.com", 9049937890, 2050, 10, 25, 300, 250)};
+	CheckingAccount checking[20] = { CheckingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe7@gmail.com", "9045529552", 350, 0, 0, 150, 200),
+	CheckingAccount(2026, "Jane", "Doe", "2440 Average Lane", "jDoe12@gmail.com", "9049937890", 2050, 10, 25, 300, 250)};
 
-	SavingAccount saving[20] = { SavingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe@gmail.com", 9045529552, 100, 0, 0, 150, .05) };
+	SavingAccount saving[20] = { SavingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe@gmail.com", "9045529552", 100, 0, 0, 150, .05) };
 	int currentCheckings = 0;
 	int currentSavings = 0;
 	for (int i = 0; i < 20; i++) {
@@ -41,7 +41,7 @@ int main()
 	string _lname = "";
 	string _address = "";
 	string _email = "";
-	int _phone = 0;
+	string _phone = "";
 	double _balance = 0;
 	int _wds = 0;
 	int _depos = 0;
@@ -132,6 +132,7 @@ int main()
 				cout << "Enter the last name of the account holder: ";
 				cin >> _lname;
 				cout << "Enter the address of the account holder: ";
+				cin.ignore();
 				getline(cin, _address);
 				cout << "Enter the email of the account holder: ";
 				cin >> _email;
@@ -170,8 +171,8 @@ int main()
 				cout << "Enter the last name of the account holder: ";
 				cin >> _lname;
 				cout << "Enter the address of the account holder: ";
+				cin.ignore();
 				getline(cin, _address);
-				cin.clear();
 				cout << "Enter the email of the account holder: ";
 				cin >> _email;
 				cout << "Enter the phone number of the account holder: ";

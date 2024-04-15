@@ -2,7 +2,7 @@
 #include <iomanip>
 
 Account::Account() :Account(0, 0, 0, 0, 0, "", "", "", "", 0) {}
-Account::Account(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, int _phone) {
+Account::Account(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, string _phone) {
 	if (_ID >= 0)
 		ID = _ID;
 	else {
@@ -34,7 +34,7 @@ Account::Account(int _ID, int _wds, int _depos, double _balance, int _points, st
 	}
 	
 	
-	if (_phone >= 0) {
+	if (_phone != "") {
 		accountCustomer.setAll(_fname, _lname, _address, _email, _phone);
 	}
 	else {
@@ -89,7 +89,7 @@ int Account::getID() {
 	return ID;
 }
 
-void Account::setAll(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, int _phone) {
+void Account::setAll(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, string _phone) {
 	if (_ID >= 0)
 		ID = _ID;
 	else {
@@ -121,7 +121,7 @@ void Account::setAll(int _ID, int _wds, int _depos, double _balance, int _points
 	}
 
 
-	if (_phone >= 0) {
+	if (_phone != "") {
 		accountCustomer.setAll(_fname, _lname, _address, _email, _phone);
 	}
 	else {
