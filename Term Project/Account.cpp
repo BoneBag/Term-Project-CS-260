@@ -89,6 +89,47 @@ int Account::getID() {
 	return ID;
 }
 
+void Account::setAll(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, int _phone) {
+	if (_ID >= 0)
+		ID = _ID;
+	else {
+		cout << "Invalid ID number entered!" << endl;
+		ID = 0;
+	}
+
+	if (_wds >= 0)
+		wds = _wds;
+	else {
+		cout << "Invalid number of withdrawals entered!" << endl;
+		wds = 0;
+	}
+
+	if (_depos >= 0)
+		depos = _depos;
+	else {
+		cout << "Invalid number of deposits entered!" << endl;
+		depos = 0;
+	}
+
+	balance = _balance;
+
+	if (_points >= 0)
+		rewardPoints = _points;
+	else {
+		cout << "Invalid number of rewards points entered!" << endl;
+		rewardPoints = 0;
+	}
+
+
+	if (_phone >= 0) {
+		accountCustomer.setAll(_fname, _lname, _address, _email, _phone);
+	}
+	else {
+		cout << "Invalid phone number entered!" << endl;
+		accountCustomer.setAll(_fname, _lname, _address, _email, 0);
+	}
+}
+
 void Account::PrintInfo() {
 	const char separator = ' ';
 	const int numWidth = 20;

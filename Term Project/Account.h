@@ -21,6 +21,8 @@ public:
 	void UsePoints(int amount);
 	int getID();
 	void PrintInfo();
+
+	void setAll(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, int _phone);
 };
 
 #endif // !_ACCOUNT_

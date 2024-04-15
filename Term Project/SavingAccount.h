@@ -20,7 +20,7 @@ public:
 
 	void payInterest(double balance, double amount);
 
-
+	void newSaving(int _ID, string _fname, string _lname, string _address, string _email, int _phone, double _balance, int _wds, int _depos, int _pts, double _interestR);
 };
 
 

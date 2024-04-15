@@ -20,7 +20,9 @@ int main()
 	int cont = 0;
 #pragma endregion
 
-	CheckingAccount checking[20] = { CheckingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe@gmail.com", 9045529552, 350, 0, 0, 150, 200)};
+	CheckingAccount checking[20] = { CheckingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe7@gmail.com", 9045529552, 350, 0, 0, 150, 200),
+	CheckingAccount(2026, "Jane", "Doe", "2440 Average Lane", "jDoe12@gmail.com", 9049937890, 2050, 10, 25, 300, 250)};
+
 	SavingAccount saving[20] = { SavingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe@gmail.com", 9045529552, 100, 0, 0, 150, .05) };
 	int currentCheckings = 0;
 	int currentSavings = 0;
@@ -33,13 +35,28 @@ int main()
 			currentSavings++;
 	}
 
+#pragma region Account Variables
+	int _ID = 0;
+	string _fname = "";
+	string _lname = "";
+	string _address = "";
+	string _email = "";
+	int _phone = 0;
+	double _balance = 0;
+	int _wds = 0;
+	int _depos = 0;
+	int _pts = 0;
+	double _overDL = 0;
+	double _intR = 0;
+#pragma endregion
+
 	do {
 		cout << header << endl << "Enter a number according to the options below: " << endl;
 		cout << "0: View Checking Account Information" << endl <<
 			"1: View Saving Account Information" << endl <<
 			"2: Spend Reward Points" << endl <<
 			"3: Create New Checking Account" << endl <<
-			"4: Create New Saving Account" << endl <<
+			"4: Create New Savings Account" << endl <<
 			"5: Modify Existing Checking Account" << endl <<
 			"6: Modify Existing Saving Account" << endl <<
 			"7: Delete Existing Checking Account" << endl <<
@@ -97,7 +114,7 @@ int main()
 		case 2:
 			system("CLS");
 			// Functionality goes here
-
+			
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
 				cin >> cont;
@@ -107,6 +124,34 @@ int main()
 		case 3:
 			system("CLS");
 			// Functionality goes here
+			if (currentCheckings <= 20) {
+				cout << "Enter the ID of the account: ";
+				cin >> _ID;
+				cout << "Enter the first name of the account holder: ";
+				cin >> _fname;
+				cout << "Enter the last name of the account holder: ";
+				cin >> _lname;
+				cout << "Enter the address of the account holder: ";
+				getline(cin, _address);
+				cout << "Enter the email of the account holder: ";
+				cin >> _email;
+				cout << "Enter the phone number of the account holder: ";
+				cin >> _phone;
+				cout << "Enter the current balance of the account: ";
+				cin >> _balance;
+				cout << "Enter the current number of withdrawals for the account: ";
+				cin >> _wds;
+				cout << "Enter the current number of deposits for the account: ";
+				cin >> _depos;
+				cout << "Enter the current number of reward points for the account: ";
+				cin >> _pts;
+				cout << "Enter the current overdraft limit for the account: ";
+				cin >> _overDL;
+				checking[currentCheckings].newChecking(_ID, _fname, _lname, _address, _email, _phone, _balance, _wds, _depos, _pts, _overDL);
+			}
+			else {
+				cout << "Maximum accounts reached" << endl;
+			}
 
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
@@ -117,6 +162,35 @@ int main()
 		case 4:
 			system("CLS");
 			// Functionality goes here
+			if (currentSavings <= 20) {
+				cout << "Enter the ID of the account: ";
+				cin >> _ID;
+				cout << "Enter the first name of the account holder: ";
+				cin >> _fname;
+				cout << "Enter the last name of the account holder: ";
+				cin >> _lname;
+				cout << "Enter the address of the account holder: ";
+				getline(cin, _address);
+				cin.clear();
+				cout << "Enter the email of the account holder: ";
+				cin >> _email;
+				cout << "Enter the phone number of the account holder: ";
+				cin >> _phone;
+				cout << "Enter the current balance of the account: ";
+				cin >> _balance;
+				cout << "Enter the current number of withdrawals for the account: ";
+				cin >> _wds;
+				cout << "Enter the current number of deposits for the account: ";
+				cin >> _depos;
+				cout << "Enter the current number of reward points for the account: ";
+				cin >> _pts;
+				cout << "Enter the current interest rate for the account: ";
+				cin >> _intR;
+				saving[currentSavings].newSaving(_ID, _fname, _lname, _address, _email, _phone, _balance, _wds, _depos, _pts, _intR);
+			}
+			else {
+				cout << "Maximum accounts reached" << endl;
+			}
 
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
