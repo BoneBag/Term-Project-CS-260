@@ -104,18 +104,6 @@ int main()
 					saving[i].PrintInfo();
 			}
 			cout << header << header << endl;
-		case 1:
-			cout << header << header << endl <<
-				left << setw(numWidth) << setfill(separator) << "Account #" <<
-				left << setw(numWidth) << setfill(separator) << "First Name" <<
-				left << setw(numWidth) << setfill(separator) << "Last name" <<
-				left << setw(numWidth) << setfill(separator) << "Balance" <<
-				left << setw(numWidth) << setfill(separator) << "Current Rewards Points" << endl
-				<< header << header << endl;
-			//Account information goes here
-			cout << header << header << endl;
-			break;
-
 		case 2:
 			int option;
 			cout << space << "Welcome to the Reward Points Shop!" << endl;
