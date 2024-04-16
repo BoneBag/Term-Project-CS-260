@@ -17,7 +17,7 @@ public:
 	void setAddress(string _address);
 	void setEmail(string _email);
 	void setPhone(string _phone);
-
+	
 	string getFName();
 	string getLName();
 	string getAddress();

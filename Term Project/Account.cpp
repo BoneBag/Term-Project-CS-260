@@ -71,7 +71,7 @@ void Account::UsePoints(int amount) {
 	if ((rewardPoints - amount) >= rewardPoints && amount >= 0) {
 		rewardPoints -= amount;
 	}
-	else if(amount >= 0) {
+	else if(amount <= 0) {
 		cout << "Invalid amount entered." << endl;
 	}
 	else {

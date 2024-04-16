@@ -21,7 +21,7 @@ int main()
 #pragma endregion
 
 	CheckingAccount checking[20] = { CheckingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe7@gmail.com", "9045529552", 350, 0, 0, 150, 200),
-	CheckingAccount(2026, "Jane", "Doe", "2440 Average Lane", "jDoe12@gmail.com", "9049937890", 2050, 10, 25, 300, 250)};
+	CheckingAccount(2026, "Jane", "Doe", "2440 Average Lane", "jDoe12@gmail.com", "9049937890", 2050, 10, 25, 300, 250) };
 
 	SavingAccount saving[20] = { SavingAccount(2005, "John", "Doe", "2320 Default Lane", "jDoe@gmail.com", "9045529552", 100, 0, 0, 150, .05) };
 	int currentCheckings = 0;
@@ -70,11 +70,11 @@ int main()
 			system("CLS");
 			cout << header << header << endl <<
 				space << space << "       Now Viewing Checking Account Information" << endl;
-			cout << header << header << endl << 
-				left << setw(numWidth) << setfill(separator) << "Account #" << 
-				left << setw(numWidth) << setfill(separator) << "First Name" << 
-				left << setw(numWidth) << setfill(separator) << "Last name" << 
-				left << setw(numWidth) << setfill(separator) << "Balance" << 
+			cout << header << header << endl <<
+				left << setw(numWidth) << setfill(separator) << "Account #" <<
+				left << setw(numWidth) << setfill(separator) << "First Name" <<
+				left << setw(numWidth) << setfill(separator) << "Last name" <<
+				left << setw(numWidth) << setfill(separator) << "Balance" <<
 				left << setw(numWidth) << setfill(separator) << "Current Reward Points" << endl
 				<< header << header << endl;
 			//Account information goes here
@@ -103,13 +103,22 @@ int main()
 				<< header << header << endl;
 			//Account information goes here
 			for (int i = 0; i < currentSavings; i++) {
-					saving[i].PrintInfo();
+				saving[i].PrintInfo();
 			}
 			cout << header << header << endl;
+
+			do {
+				cout << endl << "Enter 1 when you're ready to continue ";
+				cin >> cont;
+			} while (cont != 1);
+			system("CLS");
+			break;
 			// Rewards Shop
 		case 2:
 			system("CLS");
 			int option;
+			int userID;
+			cout << header << endl;
 			cout << space << "Welcome to the Reward Points Shop!" << endl;
 			cout << header << endl;
 			cout << "--Please choose how you would like to spend your rewards--" << endl;
@@ -117,15 +126,23 @@ int main()
 			cout << left << setw(numWidth) << setfill(separator) << "1: Travel" <<
 				left << setw(numWidth) << setfill(separator) << "2: Gift Cards" <<
 				left << setw(numWidth) << setfill(separator) << "3: Merchandise" << endl;
+			cout << header << endl;
 			cin >> option;
+			cout << header << endl;
+			cout << "Enter the ID of the account you'd like to spend reward points with: " << endl;
+			cout << header << endl;
+			cin >> userID;
 			system("CLS");
 			switch (option)
 			{
 			case 1:
+				cout << header << endl;
 				cout << space << "Select a travel option " << endl;
+				cout << header << endl;
 				cout << left << setw(numWidth) << setfill(separator) << " 1:Book a hotel"
 					<< left << setw(numWidth) << setfill(separator) << " 2:Airfare" <<
 					left << setw(numWidth) << setfill(separator) << " 3: Book a cruise" << endl;
+				cout << header << endl;
 
 				cin >> option;
 				switch (option)
@@ -134,39 +151,81 @@ int main()
 				case 1:
 					cout << header << endl;
 					cout << "Use Rewards Points to book a hotel anywhere" << endl;
+					cout << header << endl;
 					cout << "1. Holiday Inn Express -1,000 points-" << endl <<
 						"2. Hilton Grand Vacations -1,500 points- " << endl <<
 						"3. Hyatt Regency -2,000 points- " << endl;
 					cout << "Rewards can only be used on the listed hotels affiliated with Banking United" << endl;
+					cout << header << endl;
 
 					cin >> opt;
+					switch (opt)
+					{
+					case 1:
+						for (int i = 0; i < currentCheckings; i++) {
+							if (checking[i].getID() == userID) {
+								checking[i].UsePoints(1000);
+							}
+						}
+						break;
+					case 2:
+						for (int i = 0; i < currentCheckings; i++) {
+							if (checking[i].getID() == userID) {
+								checking[i].UsePoints(1500);
+							}
+						}
+						break;
+					case 3:
+						for (int i = 0; i < currentCheckings; i++) {
+							if (checking[i].getID() == userID) {
+								checking[i].UsePoints(2000);
+							}
+						}
+						break;
+					default:
+						cout << "Inavlid menu option. Please try again. ";
+						cin >> option;
+						break;
+					}
 				}
 				break;
+
 			case 2:
 
 				break;
+
 			case 3:
+				cout << header << endl;
 				cout << space << "Merchandise Shop" << endl;
+				cout << header << endl;
 				cout << left << setw(numWidth) << setfill(separator) << " 1: BU Hoodie -100 points-" <<
 					left << setw(numWidth) << setfill(separator) << " 2: BU T-Shirt -50 points-" <<
 					left << setw(numWidth) << setfill(separator) << " 3: BU Thermos cup -40 points-" << endl;
+				cout << header << endl;
 				cin >> opt;
-
 				switch (opt)
 				{
 				case 1:
-
+					for (int i = 0; i < currentCheckings; i++) {
+						if (checking[i].getID() == userID) {
+							checking[i].UsePoints(100);
+						}
+					}
 					break;
-
-
 				case 2:
-
+					for (int i = 0; i < currentCheckings; i++) {
+						if (checking[i].getID() == userID) {
+							checking[i].UsePoints(50);
+						}
+					}
 					break;
-
 				case 3:
-
+					for (int i = 0; i < currentCheckings; i++) {
+						if (checking[i].getID() == userID) {
+							checking[i].UsePoints(40);
+						}
+					}
 					break;
-
 				}
 				break;
 			default:
@@ -174,6 +233,7 @@ int main()
 				cin >> option;
 				break;
 			}
+
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
 				cin >> cont;
@@ -304,7 +364,7 @@ int main()
 			cout << header << endl
 				<< "        " << "Thank you for using Banking United!" << endl
 				<< header;
-				break;
+			break;
 		}
 	} while (opt < 9);
 }
