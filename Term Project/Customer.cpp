@@ -1,10 +1,14 @@
 #include "Customer.h"
+#include <iomanip>
 
 void Customer::printInfo() {
-	cout << "Name: " << fName << " " << lName << ", Address: " << address << ", Email: " << email << endl;
+	const char separator = ' ';
+	const int numWidth = 20;
+	cout << left << setw(numWidth) << setfill(separator) << fName <<
+		left << setw(numWidth) << setfill(separator) << lName;
 }
 
-void Customer::setAll(string _fname, string _lname, string _address, string _email, int _phone) {
+void Customer::setAll(string _fname, string _lname, string _address, string _email, string _phone) {
 	fName = _fname;
 	lName = _lname;
 	address = _address;
@@ -23,7 +27,7 @@ void Customer::setAddress(string _address) {
 void Customer::setEmail(string _email) {
 	email = _email;
 }
-void Customer::setPhone(int _phone) {
+void Customer::setPhone(string _phone) {
 	phone = _phone;
 }
 
@@ -39,11 +43,11 @@ string Customer::getAddress() {
 string Customer::getEmail() {
 	return email;
 }
-int Customer::getPhone() {
+string Customer::getPhone() {
 	return phone;
 }
 
-Customer::Customer() :Customer("", "", "", "", 0) {}
-Customer::Customer(string _fname, string _lname, string _address, string _email, int _phone) {
+Customer::Customer() :Customer("", "", "", "", "") {}
+Customer::Customer(string _fname, string _lname, string _address, string _email, string _phone) {
 	setAll(_fname, _lname, _address, _email, _phone);
 }

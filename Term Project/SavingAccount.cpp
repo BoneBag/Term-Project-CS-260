@@ -9,7 +9,7 @@ SavingAccount::SavingAccount() : Account()
 }
 
 
-SavingAccount::SavingAccount(int _ID, string _fname, string _lname, string _address, string _email, int _phone, double _balance, int _points, int _wds, int _depos, double _interestR) : Account(_ID, _wds, _depos, _balance, _points, _fname, _lname, _address, _email, _phone)
+SavingAccount::SavingAccount(int _ID, string _fname, string _lname, string _address, string _email, string _phone, double _balance, int _wds, int _depos, int _pts, double _interestR) : Account(_ID, _wds, _depos, _balance, _pts, _fname, _lname, _address, _email, _phone)
 {
 	interestRate = _interestR;
 
@@ -24,13 +24,7 @@ void SavingAccount:: payInterest(double balance, double amount)
 
 }
 
-
-
-
-
-
-
-
-
-
-
+void SavingAccount::newSaving(int _ID, string _fname, string _lname, string _address, string _email, string _phone, double _balance, int _wds, int _depos, int _pts, double _interestR){
+	interestRate = _interestR;
+	Account::setAll(_ID, _wds, _depos, _balance, _pts, _fname, _lname, _address, _email, _phone);
+}

@@ -7,25 +7,25 @@ using namespace std;
 class Customer
 {
 	string fName, lName, address, email;
-	int phone;
+	string phone;
 public:
 	void printInfo();
 
-	void setAll(string _fname, string _lname, string _address, string _email, int _phone);
+	void setAll(string _fname, string _lname, string _address, string _email, string _phone);
 	void setFName(string _fname);
 	void setLName(string _lname);
 	void setAddress(string _address);
 	void setEmail(string _email);
-	void setPhone(int _phone);
+	void setPhone(string _phone);
 
 	string getFName();
 	string getLName();
 	string getAddress();
 	string getEmail();
-	int getPhone();
+	string getPhone();
 
 	Customer();
-	Customer(string _fname, string _lname, string _address, string _email, int _phone);
+	Customer(string _fname, string _lname, string _address, string _email, string _phone);
 };
 
 #endif // !_CUSTOMER_

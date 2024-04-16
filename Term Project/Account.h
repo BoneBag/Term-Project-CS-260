@@ -13,11 +13,16 @@ class Account
 	int rewardPoints;
 public:
 	Account();
-	Account(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, int _phone);
+	Account(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, string _phone);
 
 	void Deposit(double amount);
 	void Withdraw(double amount);
+	void AddPoints(int amount);
+	void UsePoints(int amount);
+	int getID();
 	void PrintInfo();
+
+	void setAll(int _ID, int _wds, int _depos, double _balance, int _points, string _fname, string _lname, string _address, string _email, string _phone);
 };
 
 #endif // !_ACCOUNT_
