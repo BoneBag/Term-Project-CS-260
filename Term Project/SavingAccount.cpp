@@ -16,7 +16,7 @@ SavingAccount::SavingAccount(int _ID, string _fname, string _lname, string _addr
 }
 
 
-void::SavingAccount:: payInterest(double balance, double amount)
+void SavingAccount:: payInterest(double balance, double amount)
 {
 	amount = balance* interestRate;
 	 

@@ -16,7 +16,7 @@ CheckingAccount:: CheckingAccount(int _ID, string _fname, string _lname, string 
 }
 
 
-void::CheckingAccount:: Withdraw(double amount, double balance)
+void CheckingAccount:: Withdraw(double amount, double balance)
 {
 
 	if (amount <= balance)
@@ -29,14 +29,14 @@ void::CheckingAccount:: Withdraw(double amount, double balance)
 	if (amount >= balance)
 	{
 
-		if (balance - amount <= overDraftLimit)
+		if (balance - amount < overDraftLimit)
 		{
 			balance -= amount + 20;
 			Account::Withdraw(amount);
 			amount++;
 		}
 
-		else if (balance - amount >= overDraftLimit)
+		else if (balance - amount > overDraftLimit)
 		{
 			cout << "Not enough to withdraw" << endl;
 

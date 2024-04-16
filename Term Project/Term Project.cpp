@@ -3,8 +3,8 @@
 #include <iomanip>
 #include "Customer.h"
 #include "Account.h"
-#include "CheckingAccount.h"
 #include "SavingAccount.h"
+#include "CheckingAccount.h"
 using namespace std;
 
 int main()
@@ -54,7 +54,7 @@ int main()
 		cout << header << endl << "Enter a number according to the options below: " << endl;
 		cout << "0: View Checking Account Information" << endl <<
 			"1: View Saving Account Information" << endl <<
-			"2: Spend Reward Points" << endl <<
+			"2: Reward Points Shop" << endl <<
 			"3: Create New Checking Account" << endl <<
 			"4: Create New Savings Account" << endl <<
 			"5: Modify Existing Checking Account" << endl <<
@@ -104,6 +104,38 @@ int main()
 					saving[i].PrintInfo();
 			}
 			cout << header << header << endl;
+		case 2:
+			int option;
+			cout << space << "Welcome to the Reward Points Shop!" << endl;
+			cout << header << endl;
+			cout << "--Please choose how you would like to spend your rewards--" << endl;
+			cout << endl;
+			cout << left << setw(numWidth) << setfill(separator) << "1: Travel" <<
+				left << setw(numWidth) << setfill(separator) << "2: Gift Cards" <<
+				left << setw(numWidth) << setfill(separator) << "3: Merchandise" << endl;
+			cin >> option;
+			system("CLS");
+
+			if (option == 1)
+			{
+				cout << space << "Select a travel option " << endl;
+				cout << left << setw(numWidth) << setfill(separator) << " 1:Book a hotel"
+					<< left << setw(numWidth) << setfill(separator) << " 2:Airfare" <<
+					left << setw(numWidth) << setfill(separator) << " 3: Book a cruise" << endl;
+
+				cin >> opt;
+				switch (opt)
+				{
+
+				case 1:
+					cout << header << endl;
+					cout << "Use Rewards Points to book a hotel anywhere" << endl;
+					cout << "1. Holiday Inn Express -1,000 points-" << endl << 
+						"2. Hilton Grand Vacations -1,500 points- " << endl << 
+						"3. Hyatt Regency -2,000 points- " << endl;
+					cout << "Rewards can only be used on the listed hotels affiliated with Banking United" << endl;
+
+					cin >> opt;
 
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
@@ -153,6 +185,49 @@ int main()
 			else {
 				cout << "Maximum accounts reached" << endl;
 			}
+
+
+
+					break;
+
+				}
+
+			
+			}
+
+			if (option == 3)
+			{
+				cout << space << "Merchandise Shop" << endl; 
+				cout << left << setw(numWidth) << setfill(separator) << " 1: BU Hoodie -100 points-" <<
+					left << setw(numWidth) << setfill(separator) << " 2: BU T-Shirt -50 points-" <<
+					left << setw(numWidth) << setfill(separator) << " 3: BU Thermos cup -40 points-" << endl;
+				cin >> opt;
+
+				switch (opt)
+				{
+				case 1: 
+
+					break;
+
+
+				case 2:
+
+					break;
+
+				case 3:
+
+					break;
+
+				}
+
+
+			}
+
+			break;
+		case 3:
+			
+
+
 
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
