@@ -135,6 +135,7 @@ int main()
 			system("CLS");
 			switch (option)
 			{
+#pragma region Travel Options
 			case 1:
 				cout << header << endl;
 				cout << space << "Select a travel option " << endl;
@@ -189,11 +190,13 @@ int main()
 					}
 				}
 				break;
-
+#pragma endregion
+#pragma region Gift Cards
 			case 2:
 
 				break;
-
+#pragma endregion
+#pragma region Merch Shop
 			case 3:
 				cout << header << endl;
 				cout << space << "Merchandise Shop" << endl;
@@ -233,6 +236,7 @@ int main()
 				cin >> option;
 				break;
 			}
+#pragma endregion
 
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
