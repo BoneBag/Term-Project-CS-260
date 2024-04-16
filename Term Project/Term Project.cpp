@@ -65,6 +65,7 @@ int main()
 		cin >> opt;
 
 		switch (opt) {
+			// Checking info
 		case 0:
 			system("CLS");
 			cout << header << header << endl <<
@@ -88,6 +89,7 @@ int main()
 			} while (cont != 1);
 			system("CLS");
 			break;
+			//Savings info
 		case 1:
 			system("CLS");
 			cout << header << header << endl <<
@@ -104,7 +106,9 @@ int main()
 					saving[i].PrintInfo();
 			}
 			cout << header << header << endl;
+			// Rewards Shop
 		case 2:
+			system("CLS");
 			int option;
 			cout << space << "Welcome to the Reward Points Shop!" << endl;
 			cout << header << endl;
@@ -115,44 +119,68 @@ int main()
 				left << setw(numWidth) << setfill(separator) << "3: Merchandise" << endl;
 			cin >> option;
 			system("CLS");
-
-			if (option == 1)
+			switch (option)
 			{
+			case 1:
 				cout << space << "Select a travel option " << endl;
 				cout << left << setw(numWidth) << setfill(separator) << " 1:Book a hotel"
 					<< left << setw(numWidth) << setfill(separator) << " 2:Airfare" <<
 					left << setw(numWidth) << setfill(separator) << " 3: Book a cruise" << endl;
 
-				cin >> opt;
-				switch (opt)
+				cin >> option;
+				switch (option)
 				{
 
 				case 1:
 					cout << header << endl;
 					cout << "Use Rewards Points to book a hotel anywhere" << endl;
-					cout << "1. Holiday Inn Express -1,000 points-" << endl << 
-						"2. Hilton Grand Vacations -1,500 points- " << endl << 
+					cout << "1. Holiday Inn Express -1,000 points-" << endl <<
+						"2. Hilton Grand Vacations -1,500 points- " << endl <<
 						"3. Hyatt Regency -2,000 points- " << endl;
 					cout << "Rewards can only be used on the listed hotels affiliated with Banking United" << endl;
 
 					cin >> opt;
+				}
+				break;
+			case 2:
 
+				break;
+			case 3:
+				cout << space << "Merchandise Shop" << endl;
+				cout << left << setw(numWidth) << setfill(separator) << " 1: BU Hoodie -100 points-" <<
+					left << setw(numWidth) << setfill(separator) << " 2: BU T-Shirt -50 points-" <<
+					left << setw(numWidth) << setfill(separator) << " 3: BU Thermos cup -40 points-" << endl;
+				cin >> opt;
+
+				switch (opt)
+				{
+				case 1:
+
+					break;
+
+
+				case 2:
+
+					break;
+
+				case 3:
+
+					break;
+
+				}
+				break;
+			default:
+				cout << "Inavlid menu option. Please try again. ";
+				cin >> option;
+				break;
+			}
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
 				cin >> cont;
 			} while (cont != 1);
 			system("CLS");
 			break;
-		case 2:
-			system("CLS");
-			// Functionality goes here
-			
-			do {
-				cout << endl << "Enter 1 when you're ready to continue ";
-				cin >> cont;
-			} while (cont != 1);
-			system("CLS");
-			break;
+			// New Checking
 		case 3:
 			system("CLS");
 			// Functionality goes here
@@ -185,56 +213,13 @@ int main()
 			else {
 				cout << "Maximum accounts reached" << endl;
 			}
-
-
-
-					break;
-
-				}
-
-			
-			}
-
-			if (option == 3)
-			{
-				cout << space << "Merchandise Shop" << endl; 
-				cout << left << setw(numWidth) << setfill(separator) << " 1: BU Hoodie -100 points-" <<
-					left << setw(numWidth) << setfill(separator) << " 2: BU T-Shirt -50 points-" <<
-					left << setw(numWidth) << setfill(separator) << " 3: BU Thermos cup -40 points-" << endl;
-				cin >> opt;
-
-				switch (opt)
-				{
-				case 1: 
-
-					break;
-
-
-				case 2:
-
-					break;
-
-				case 3:
-
-					break;
-
-				}
-
-
-			}
-
-			break;
-		case 3:
-			
-
-
-
 			do {
 				cout << endl << "Enter 1 when you're ready to continue ";
 				cin >> cont;
 			} while (cont != 1);
 			system("CLS");
 			break;
+			// New Savings
 		case 4:
 			system("CLS");
 			// Functionality goes here
